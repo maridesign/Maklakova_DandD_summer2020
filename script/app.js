@@ -36,15 +36,24 @@
 	}
 
 	function allowDrop(event) {
-		console.log('dropped something on me');
+	let zone = event.target;
+if(zone.className == "puzzle-image"){
+zone = event.target.parentNode;
+}
+console.log('dropped something on me');
 
-		let droppedImage = event.dataTransfer.getData("draggedImg");
-		// let currentTrack = event.dataTransfer.getData('targetTrack');
+let droppedImage = event.dataTransfer.getData("draggedImg");
+// let currentTrack = event.dataTransfer.getData('targetTrack');
+        if(zone.firstChild == null){
+zone.appendChild(document.querySelector(`#${droppedImage}`));
+} else {
+let oldChild = zone.removeChild(zone.firstChild);
+tray.appendChild(oldChild);
 
-		event.target.appendChild(document.querySelector(`#${droppedImage}`));
-		//debugger;
-	}
-
+zone.appendChild(document.querySelector(`#${droppedImage}`));
+}
+//debugger;
+}
 	// click on the bottom buttons to change the puzzle image we're working with
 	puzzleButtons.forEach(button => button.addEventListener('click', changeImageSet));
 	puzzlePieces.forEach(piece => piece.addEventListener('dragstart', allowDrag));
