@@ -1,0 +1,9 @@
+     Fixing Bugs.
+     
+     We needed to make sure you can’t drop 2 pieces at the same spot.
+     I was able to fix this one. If there is nothing – you can drop a puzzle piece, if there is something already – return first piece.
+     
+     Another problem was that if you pick new image, board would not reset. I added 
+     tray = document.querySelector(".puzzle-pieces")
+     
+     
