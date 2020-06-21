@@ -1,8 +1,7 @@
 # Maklakova_DandD_summer2020
 
 # Description
-Puzzle game with javascript
-will make it later
+Puzzle game with javascript. Drug puzzle pieces from the left to the middle to build a picture. You can chose 4 different pictures to build on the bottom o f the page.
 
 # Installation
 No installation required
